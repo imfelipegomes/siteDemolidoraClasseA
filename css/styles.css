@@ -236,11 +236,11 @@ footer .address {
     font-weight: bold;
 }
 
-/* Botão flutuante do WhatsApp */
+/* Botão do WhatsApp */
 .whatsapp-float {
     position: fixed;
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     bottom: 40px;
     right: 40px;
     background-color: #25d366;
@@ -262,6 +262,6 @@ footer .address {
 }
 
 .whatsapp-icon {
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
 }

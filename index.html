@@ -13,7 +13,7 @@
 
 </head>
 <body>
-    <div class="container">
+    <div id="inicio" class="container">
         <div class="navbar-container">
             <nav>
                 <a href="">
@@ -21,13 +21,13 @@
                 </a>
                 <ul class="navbar-items">
                     <li>
-                        <a href="#">Início</a>
+                        <a href="#inicio">Início</a>
                     </li>
                     <li>
-                        <a href="#">Serviços</a>
+                        <a href="#servicos">Serviços</a>
                     </li>
                     <li>
-                        <a href="#">Sobre Nós</a>
+                        <a href="#sobre">Sobre Nós</a>
                     </li>
                     <li>
                         <a class="default-btn" href="https://api.whatsapp.com/send?phone=5511910824777">Fale Conosco</a>
@@ -41,7 +41,7 @@
                 <p>Serviços de Demolição em geral: Terraplanagem, Desmonte de Estruturas, Locação de Máquinas e Venda de Produtos.</p>
             </div>
 
-            <section class="services-container">
+            <section id="servicos" class="services-container">
                 <h2>Nossos serviços</h2>
                 <ul>
                     <li>
@@ -93,7 +93,7 @@
             </section>
 
             <!-- Sobre nós -->
-            <section class="about">
+            <section id="sobre" class="about">
                 <div>
                 <img src="/img/logo-index.png">
                 </div >
@@ -108,9 +108,9 @@
                 <h2>Fale conosco</h2>
                 <p>Precisa de nossos serviços? Vamos conversar!</p>
                 <form>
-                    <input type="text" name="name" id="name" placeholder="Seu nome" required>
-                    <input type="email" name="email" id="email" placeholder="Seu e-mail">
-                    <input type="tel" name="telefone" id="telefone" placeholder="Digite seu WhatsApp" required>
+                    <input type="text" name="name" id="name" placeholder="Nome completo" required>
+                    <input type="email" name="email" id="email" placeholder="E-mail">
+                    <input type="tel" name="telefone" id="telefone" placeholder="Seu Nº WhatsApp" required>
                     <textarea name="message" id="message" placeholder="Descreva aqui detalhadamente o que precisa, com o maior número de informações possíveis."></textarea>
                     <input type="submit" value="Enviar">
                 </form>
