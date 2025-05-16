@@ -30,7 +30,10 @@
                         <a href="#sobre">Sobre Nós</a>
                     </li>
                     <li>
-                        <a class="default-btn" href="https://api.whatsapp.com/send?phone=5511910824777">Fale Conosco</a>
+                        <a href="#projetos">Projetos</a>
+                    </li>
+                    <li>
+                        <a class="default-btn" href="#contato">Fale Conosco</a>
                     </li>
                 </ul>
             </nav>
@@ -92,6 +95,24 @@
                 </ul>
             </section>
 
+            <!-- Seção Projetos -->
+<section id="projetos" class="projects-container">
+    <h2>Nossos Projetos</h2>
+    <p>Galeria de fotos do nosso dia a dia de trabalho. Muita disposição, comprometimento e profissionalismo.</p>
+    <div class="gallery-container">
+        <button class="gallery-arrow prev-arrow">&#10094;</button>
+        <div class="gallery">
+            <div class="gallery-track">
+                <img src="/img/1.png" alt="Projeto de Terraplanagem 1">
+                <img src="/img/2.png" alt="Projeto de Terraplanagem 2">
+                <img src="/img/3.png" alt="Projeto de Terraplanagem 3">
+                <img src="/img/4.png" alt="Projeto de Terraplanagem 4">
+            </div>
+        </div>
+        <button class="gallery-arrow next-arrow">&#10095;</button>
+    </div>
+</section>
+
             <!-- Sobre nós -->
             <section id="sobre" class="about">
                 <div>
@@ -104,7 +125,7 @@
             </section>
 
             <!-- Contato -->
-            <section class="contact-container">
+            <section id="contato" class="contact-container">
                 <h2>Fale conosco</h2>
                 <p>Precisa de nossos serviços? Vamos conversar!</p>
                 <form>
@@ -116,11 +137,52 @@
                 </form>
             </section>
         </main>
-        <footer>
-            <p class="address">Matriz: Av. Valentim Magalhães, 2035 - Condomínio Maracanã, Santo André - SP | Filial: Av. Capitão Mario Toledo de Camargo, 2035 - Vila Luzita, Santo André - SP</p>
-            <p> Demolidora Classe A @ 2025 | Todos os direitos reservados | Criado por Felipe Gomes</p>
-        </footer>
     </div>
+
+    <footer>
+    <div class="footer-content">
+        <div class="address-column">
+            <h3>Matriz</h3>
+            <address>
+                Av. Valentim Magalhães, 2035<br>
+                Condomínio Maracanã<br>
+                Santo André - SP<br>
+                <a href="https://maps.google.com/?q=Av. Valentim Magalhães, 2035, Santo André, SP" 
+                   target="_blank" 
+                   class="map-link">
+                   Ver no mapa
+                </a>
+            </address>
+        </div>
+        
+        <div class="address-column">
+            <h3>Filial</h3>
+            <address>
+                Av. Cap. Mario Toledo de Camargo, 2035<br>
+                Vila Luzita<br>
+                Santo André - SP<br>
+                <a href="https://maps.google.com/?q=Av. Capitão Mario Toledo de Camargo, 2035, Santo André, SP" 
+                   target="_blank" 
+                   class="map-link">
+                   Ver no mapa
+                </a>
+            </address>
+        </div>
+
+        <div class="address-column">
+            <h3>Contatos</h3>
+            <address>
+                <strong>Telefone Matriz:</strong> (11) 91082-4777<br>
+                <strong>Telefone Filial:</strong> (11) 91082-4777<br>
+                <strong>Instagram:</strong> @demolidoraclassea<br>
+            </address>
+        </div>
+        
+        <div class="copyright">
+            <p>Demolidora Classe A © <span id="current-year"></span>. Todos os direitos reservados. Site criado por <a href="https://github.com/imfelipegomes">Felipe Gomes.</a></p>
+        </div>
+    </div>
+</footer>
 
     <!-- Botão do WhatsApp -->
 <a href="https://api.whatsapp.com/send?phone=5511910824777" class="whatsapp-float" target="_blank">

@@ -154,6 +154,83 @@ h2 {
     line-height: 30px;
 }
 
+/* Seção Projetos */
+.projects-container h2 {
+    color: var(--primary-color-blue);
+}
+
+.projects-container p {
+    margin-bottom: 40px;
+    margin-top: -20px;
+    font-size: 20px;
+    color: var(--primary-color-blue);
+}
+
+.projects-container {
+    padding: 5rem 0;
+    background-color: #F6C139;
+    text-align: center;
+}
+
+.gallery-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.gallery {
+    width: 95%;
+    overflow: hidden;
+    margin: 0 20px;
+}
+
+.gallery-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.gallery img {
+    width: 500px;
+    height: 300px;
+    object-fit: cover;
+    margin: 0 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    flex-shrink: 0;
+}
+
+.gallery-arrow {
+    background-color: var(--primary-color-blue);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.gallery-arrow:hover {
+    background-color: #021f70;
+    transform: scale(1.1);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .gallery img {
+        width: 250px;
+        height: 150px;
+    }
+    
+    .gallery {
+        width: 90%;
+    }
+}
+
 /* Sobre nós*/
 .about {
     padding: 5rem 0;
@@ -226,21 +303,86 @@ h2 {
     font-size: 20px;
 }
 
+/* Estilos do Footer */
 footer {
-    border-top: 3px solid var(--primary-color-yellow); 
-    text-align: center;
-    padding: 20px;
+    background-color: var(--primary-color-blue);
+    color: white;
+    padding: 3rem 0;
+    border-top: 6px solid var(--primary-color-yellow);
 }
 
-footer .address {
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 2rem;
+    padding: 0 2rem;
+}
+
+.address-column {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+}
+
+.address-column h3 {
+    color: var(--primary-color-yellow);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+address {
+    font-style: normal;
+    line-height: 1.6;
+    font-size: 0.9rem;
+}
+
+.map-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: var(--primary-color-yellow);
+    text-decoration: none;
+    transition: all 0.3s;
+    font-weight: bold;
+}
+
+.map-link:hover {
+    text-decoration: underline;
+    transform: translateX(5px);
+}
+
+.copyright {
+    text-align: right;
+    margin-top: 4rem;
+    flex-basis: 100%;
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+.copyright p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #fff;
+}
+
+.copyright a {
+    color: var(--primary-color-yellow);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* JavaScript para ano atual */
+#current-year {
     font-weight: bold;
 }
 
 /* Botão do WhatsApp */
 .whatsapp-float {
     position: fixed;
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     bottom: 40px;
     right: 40px;
     background-color: #25d366;
@@ -254,14 +396,30 @@ footer .address {
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
+    /* Efeito de pulsação */
+    animation: pulse 2s infinite;
 }
 
 .whatsapp-float:hover {
     background-color: #128C7E;
     transform: scale(1.1);
+    animation: none; /* Remove a pulsação ao passar o mouse */
 }
 
 .whatsapp-icon {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
+}
+
+/* Animação de pulsar */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
 }

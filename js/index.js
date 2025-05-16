@@ -68,6 +68,62 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// Galeria de Projetos - Versão Corrigida
+document.addEventListener('DOMContentLoaded', function() {
+    const track = document.querySelector('.gallery-track');
+    const images = document.querySelectorAll('.gallery img');
+    const nextBtn = document.querySelector('.next-arrow');
+    const prevBtn = document.querySelector('.prev-arrow');
+    const gallery = document.querySelector('.gallery');
+    
+    let currentIndex = 0;
+    let imageWidth = images[0].offsetWidth + 20; // Largura + margem
+    
+    // Calcula quantas imagens são visíveis na galeria
+    function getVisibleImagesCount() {
+        return Math.floor(gallery.offsetWidth / imageWidth);
+    }
+    
+    function updateGallery() {
+        const displacement = currentIndex * imageWidth;
+        track.style.transform = `translateX(-${displacement}px)`;
+        
+        // Desabilita seta anterior se estiver no início
+        prevBtn.disabled = currentIndex === 0;
+        
+        // Desabilita próxima seta se estiver no final
+        const visibleCount = getVisibleImagesCount();
+        nextBtn.disabled = currentIndex >= images.length - visibleCount;
+    }
+    
+    nextBtn.addEventListener('click', function() {
+        const visibleCount = getVisibleImagesCount();
+        if (currentIndex < images.length - visibleCount) {
+            currentIndex++;
+            updateGallery();
+        }
+    });
+    
+    prevBtn.addEventListener('click', function() {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateGallery();
+        }
+    });
+    
+    // Recalcula ao redimensionar a janela
+    window.addEventListener('resize', function() {
+        imageWidth = images[0].offsetWidth + 20;
+        updateGallery();
+    });
+    
+    // Inicializa
+    updateGallery();
+});
+
+// Atualiza o ano no footer automaticamente
+document.getElementById('current-year').textContent = new Date().getFullYear();
+
 // Efeito suave para o botão do WhatsApp
 document.addEventListener('DOMContentLoaded', function() {
     const whatsappBtn = document.querySelector('.whatsapp-float');
