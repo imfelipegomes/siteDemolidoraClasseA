@@ -124,6 +124,67 @@ document.addEventListener('DOMContentLoaded', function() {
 // Atualiza o ano no footer automaticamente
 document.getElementById('current-year').textContent = new Date().getFullYear();
 
+// Cookie Popup
+document.addEventListener('DOMContentLoaded', function() {
+    const cookiePopup = document.getElementById('cookiePopup');
+    const acceptCookies = document.getElementById('acceptCookies');
+    const rejectCookies = document.getElementById('rejectCookies');
+    
+    // Verifica se o usuário já fez uma escolha anteriormente
+    if (!localStorage.getItem('cookieChoice')) {
+        // Mostra o popup após 1 segundo
+        setTimeout(() => {
+            cookiePopup.classList.add('show');
+        }, 1000);
+    }
+    
+    // Botão Aceitar
+    acceptCookies.addEventListener('click', function() {
+        localStorage.setItem('cookieChoice', 'accepted');
+        cookiePopup.classList.remove('show');
+        // Aqui você pode adicionar o código para carregar cookies terceiros
+    });
+    
+    // Botão Recusar
+    rejectCookies.addEventListener('click', function() {
+        localStorage.setItem('cookieChoice', 'rejected');
+        cookiePopup.classList.remove('show');
+        // Aqui você pode adicionar o código para bloquear cookies terceiros
+    });
+});
+
+// Botão Voltar ao Topo
+document.addEventListener('DOMContentLoaded', function() {
+    const backToTop = document.getElementById('backToTop');
+    const footer = document.querySelector('footer');
+    
+    function toggleBackToTop() {
+        const footerPosition = footer.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight;
+        
+        if (footerPosition < screenPosition) {
+            backToTop.classList.add('show');
+        } else {
+            backToTop.classList.remove('show');
+        }
+    }
+    
+    // Mostrar/ocultar quando rolar a página
+    window.addEventListener('scroll', toggleBackToTop);
+    
+    // Rolagem suave ao clicar
+    backToTop.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+    
+    // Verificar posição inicial
+    toggleBackToTop();
+});
+
 // Efeito suave para o botão do WhatsApp
 document.addEventListener('DOMContentLoaded', function() {
     const whatsappBtn = document.querySelector('.whatsapp-float');
