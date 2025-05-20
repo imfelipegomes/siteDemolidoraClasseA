@@ -198,38 +198,3 @@ document.addEventListener('DOMContentLoaded', function() {
     whatsappBtn.style.opacity = '0';
     whatsappBtn.style.transition = 'opacity 0.5s ease';
 });
-
-// Menu Mobile
-document.addEventListener('DOMContentLoaded', function() {
-    // Cria o botão do menu mobile
-    const menuBtn = document.createElement('button');
-    menuBtn.className = 'mobile-menu-btn';
-    menuBtn.innerHTML = '☰';
-    document.querySelector('nav').appendChild(menuBtn);
-    
-    // Alterna o menu
-    menuBtn.addEventListener('click', function() {
-        document.querySelector('.navbar-items').classList.toggle('active');
-    });
-    
-    // Fecha o menu ao clicar em um item
-    document.querySelectorAll('.navbar-items a').forEach(item => {
-        item.addEventListener('click', () => {
-            document.querySelector('.navbar-items').classList.remove('active');
-        });
-    });
-    
-    // Ajusta a galeria para mobile
-    function adjustGalleryForMobile() {
-        const gallery = document.querySelector('.gallery');
-        if (window.innerWidth <= 800) {
-            gallery.style.width = '100%';
-            document.querySelectorAll('.gallery img').forEach(img => {
-                img.style.margin = '0 5px';
-            });
-        }
-    }
-    
-    window.addEventListener('resize', adjustGalleryForMobile);
-    adjustGalleryForMobile();
-});
